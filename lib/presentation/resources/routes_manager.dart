@@ -1,3 +1,4 @@
+import 'package:clean_architecture/presentation/onboarding/onboarding_view.dart';
 import 'package:clean_architecture/presentation/resources/strings_manager.dart';
 import 'package:flutter/material.dart';
 
@@ -13,6 +14,7 @@ class Routes {
   static const String loginRoute = "/login";
   static const String registerRoute = "/register";
   static const String forgetPasswordRoute = "/home";
+  static const String onboarding = "/onboarding"; 
   static const String main = "/main";
   static const String storesDetailsRoute = "/storesDetailsRoute";
 }
@@ -32,6 +34,8 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => const MainView());
       case Routes.storesDetailsRoute:
         return MaterialPageRoute(builder: (_) => const StoreDetailsView());
+              case Routes.onboarding:
+        return MaterialPageRoute(builder: (_) => const OnboardingView());
       default:
        return unDefiendedRoute();
     }
