@@ -1,9 +1,7 @@
 import 'dart:async';
-
 import 'package:clean_architecture/presentation/resources/assets_manager.dart';
 import 'package:clean_architecture/presentation/resources/constanta_manager.dart';
 import 'package:flutter/material.dart';
-
 import '../resources/color_manager.dart';
 import '../resources/routes_manager.dart';
 
