@@ -16,9 +16,6 @@ ThemeData getApplicationTheme() {
           color: ColorManager.white,
           shadowColor: ColorManager.grey,
           elevation: AppSize.s4),
-      //main colors
-      // card view  theme
-      // app bar theme
       appBarTheme: AppBarTheme(
           centerTitle: true,
           color: ColorManager.primary,
@@ -49,35 +46,30 @@ ThemeData getApplicationTheme() {
             getBoldStyle(color: ColorManager.darkGrey, fontSize: FontSize.s12),
       ),
       inputDecorationTheme: InputDecorationTheme(
-          contentPadding: EdgeInsets.all(AppPadding.p8),
-          hintStyle:
-              getRegularStyle(color: ColorManager.grey, fontSize: FontSize.s14),
-          labelStyle: getMediumStyle(
-              color: ColorManager.darkGrey, fontSize: FontSize.s20),
-          errorStyle: getRegularStyle(color: ColorManager.error),
-          enabledBorder: OutlineInputBorder(
+        contentPadding: EdgeInsets.all(AppPadding.p8),
+        hintStyle:
+            getRegularStyle(color: ColorManager.grey, fontSize: FontSize.s14),
+        labelStyle: getMediumStyle(
+            color: ColorManager.darkGrey, fontSize: FontSize.s20),
+        errorStyle: getRegularStyle(color: ColorManager.error),
+        enabledBorder: OutlineInputBorder(
             borderSide:
                 BorderSide(color: ColorManager.grey, width: AppSize.s1_5),
-                borderRadius: BorderRadius.circular(AppSize.s8)
-          ),
-            focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(AppSize.s8)),
+        focusedBorder: OutlineInputBorder(
             borderSide:
                 BorderSide(color: ColorManager.primary, width: AppSize.s1_5),
-                borderRadius: BorderRadius.circular(AppSize.s8)
-          ),
-          errorBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(AppSize.s8)),
+        errorBorder: OutlineInputBorder(
             borderSide:
                 BorderSide(color: ColorManager.error, width: AppSize.s1_5),
-                borderRadius: BorderRadius.circular(AppSize.s8)
-          ),
-
-           focusedErrorBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(AppSize.s8)),
+        focusedErrorBorder: OutlineInputBorder(
             borderSide:
                 BorderSide(color: ColorManager.primary, width: AppSize.s1_5),
-                borderRadius: BorderRadius.circular(AppSize.s8)
-          ),
-          
-          ));
-
-  //input theme
+            borderRadius: BorderRadius.circular(AppSize.s8)),
+      ),
+      bottomSheetTheme:
+          BottomSheetThemeData(
+            backgroundColor: ColorManager.transparent));
 }

@@ -13,4 +13,7 @@ class ColorManager {
   static Color grey2 = const Color(0xff797979);
   static Color white = const Color(0xffFFFFFF);
   static Color error = const Color(0xffe61f34);
+  static Color transparent = Color.fromARGB(0, 255, 255, 255);
+  
+  //transparent
 }
