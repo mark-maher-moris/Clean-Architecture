@@ -1,12 +1,13 @@
-abstract class BaseViewModel extends BassViewModelInputs  {
+abstract class BaseViewModel extends BaseViewModelInputs with BaseViewModelOutputs {
   
 }
 
-abstract class BassViewModelInputs {
-  void strat();
+abstract class BaseViewModelInputs {
+  void start();
   void dispose();
 }
 
-abstract class BassViewModelOutputs {
+mixin BaseViewModelOutputs {
   void test();
 }
+

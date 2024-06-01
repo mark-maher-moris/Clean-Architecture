@@ -1,10 +1,10 @@
-import 'package:clean_architecture/presentation/onboarding/onboarding_view.dart';
 import 'package:clean_architecture/presentation/resources/strings_manager.dart';
 import 'package:flutter/material.dart';
 
 import '../forget_password/foreget_password.dart';
 import '../login/login_view.dart';
 import '../main/main_view.dart';
+import '../onboarding/view/onboarding_view.dart';
 import '../register/register_view.dart';
 import '../splash/splash_view.dart';
 import '../store_details/store_details_view.dart';
