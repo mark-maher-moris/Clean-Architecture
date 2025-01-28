@@ -8,7 +8,6 @@ import '../../resources/strings_manager.dart';
 
 class OnboardingViewModel extends BaseViewModel
     with OnboardingViewmodelInputs, OnboardingViewmodelOutputs {
-  // OnBoarding View Model inputs
   StreamController _streamController = StreamController<SliderViewObject>();
   int _currentIndex = 0;
 
@@ -16,21 +15,18 @@ class OnboardingViewModel extends BaseViewModel
 
   @override
   void start() {
-    // TODO: implement start
     _list = _getSliderData();
     _postDataToView();
   }
 
   @override
   void dispose() {
-    // TODO: implement dispose
     _streamController.close();
   }
 
   @override
   int goNext() {
-    // TODO: implement goNext
-      int nextIndex = ++_currentIndex;
+    int nextIndex = ++_currentIndex;
     if (nextIndex == _list.length) {
       nextIndex = 0;
     }
@@ -39,8 +35,7 @@ class OnboardingViewModel extends BaseViewModel
 
   @override
   int goPrevious() {
-    // TODO: implement 
-        int previousIndex = --_currentIndex;
+    int previousIndex = --_currentIndex;
     if (previousIndex == -1) {
       previousIndex = _list.length - 1;
     }
@@ -49,17 +44,14 @@ class OnboardingViewModel extends BaseViewModel
 
   @override
   void onPageChanged(int index) {
-    // TODO: implement onPageChanged
     _currentIndex = index;
     _postDataToView();
   }
 
   @override
-  // TODO: implement inputSliderViewObject
   Sink get inputSliderViewObject => _streamController.sink;
 
   @override
-  // TODO: output inputSliderViewObject
   Stream<SliderViewObject> get outputSliderViewObject =>
       _streamController.stream.map((sliderViewObject) => sliderViewObject);
 
@@ -80,9 +72,7 @@ class OnboardingViewModel extends BaseViewModel
       ];
 
   @override
-  void test() {
-    // TODO: implement test
-  }
+  void test() {}
 }
 
 mixin OnboardingViewmodelInputs {
