@@ -1,7 +1,7 @@
 import 'package:clean_architecture/app/constants.dart';
 import 'package:clean_architecture/app/extentions.dart';
 import 'package:clean_architecture/data/responses/responses.dart';
-import 'package:clean_architecture/domain/models.dart';
+import 'package:clean_architecture/domain/model/models.dart';
 
 extension CustomerResponseMapper on CustomerResponse? {
   Customer toDomain() {

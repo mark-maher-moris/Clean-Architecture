@@ -3,7 +3,7 @@ import 'package:clean_architecture/presentation/resources/constanta_manager.dart
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
-import '../../../domain/models.dart';
+import '../../../domain/model/models.dart';
 import '../../resources/assets_manager.dart';
 import '../../resources/color_manager.dart';
 import '../../resources/strings_manager.dart';
@@ -42,61 +42,56 @@ class _OnboardingViewState extends State<OnboardingView> {
         builder: (context, snapshot) {
           return _getContentWidget(snapshot.data);
         });
-  
-      }
-
-
-
-Widget _getContentWidget(SliderViewObject? sliderViewObject) {
-  if(sliderViewObject == null) return Container();
-  else{
- return SafeArea(
-      child: Scaffold(
-        backgroundColor: ColorManager.white,
-        appBar: AppBar(
-          backgroundColor: ColorManager.white,
-          elevation: 0,
-          systemOverlayStyle: SystemUiOverlayStyle(
-              statusBarColor: ColorManager.white,
-              statusBarBrightness: Brightness.dark),
-        ),
-        body: PageView.builder(
-            controller: _pageController,
-            itemCount: sliderViewObject.numOfSlides,
-            onPageChanged: (index) {
-           _viewModel.onPageChanged(index);
-            },
-            itemBuilder: (context, index) {
-              return OnBoardingPage(sliderViewObject.sliderObject);
-            }),
-        bottomSheet: Container(
-            color: ColorManager.white,
-            // height: AppSize.s100,
-            margin: const EdgeInsets.symmetric(horizontal: AppMargin.m24),
-            child: Column(mainAxisSize: MainAxisSize.min, children: [
-              Align(
-                  alignment: Alignment.centerRight,
-                  child: Padding(
-                    padding: const EdgeInsets.only(bottom: AppPadding.p8),
-                    child: TextButton(
-                        onPressed: () {
-                          print("OP");
-                        },
-                        child: Text(
-                          AppStrings.skip,
-                          textAlign: TextAlign.end,
-                          style: Theme.of(context).textTheme.displayMedium,
-                        )),
-                  )),
-              _getBottomSheetWidget(sliderViewObject)
-            ])),
-      ),
-    );
- 
   }
- 
-  
-}
+
+  Widget _getContentWidget(SliderViewObject? sliderViewObject) {
+    if (sliderViewObject == null)
+      return Container();
+    else {
+      return SafeArea(
+        child: Scaffold(
+          backgroundColor: ColorManager.white,
+          appBar: AppBar(
+            backgroundColor: ColorManager.white,
+            elevation: 0,
+            systemOverlayStyle: SystemUiOverlayStyle(
+                statusBarColor: ColorManager.white,
+                statusBarBrightness: Brightness.dark),
+          ),
+          body: PageView.builder(
+              controller: _pageController,
+              itemCount: sliderViewObject.numOfSlides,
+              onPageChanged: (index) {
+                _viewModel.onPageChanged(index);
+              },
+              itemBuilder: (context, index) {
+                return OnBoardingPage(sliderViewObject.sliderObject);
+              }),
+          bottomSheet: Container(
+              color: ColorManager.white,
+              // height: AppSize.s100,
+              margin: const EdgeInsets.symmetric(horizontal: AppMargin.m24),
+              child: Column(mainAxisSize: MainAxisSize.min, children: [
+                Align(
+                    alignment: Alignment.centerRight,
+                    child: Padding(
+                      padding: const EdgeInsets.only(bottom: AppPadding.p8),
+                      child: TextButton(
+                          onPressed: () {
+                            print("OP");
+                          },
+                          child: Text(
+                            AppStrings.skip,
+                            textAlign: TextAlign.end,
+                            style: Theme.of(context).textTheme.displayMedium,
+                          )),
+                    )),
+                _getBottomSheetWidget(sliderViewObject)
+              ])),
+        ),
+      );
+    }
+  }
 
   Widget _getBottomSheetWidget(SliderViewObject sliderViewObject) {
     return Container(
@@ -120,7 +115,7 @@ Widget _getContentWidget(SliderViewObject? sliderViewObject) {
                       ImageAssets.leftArrowIcon,
                     ))),
           ),
-          for (int i = 0; i <sliderViewObject.numOfSlides; i++) ...[
+          for (int i = 0; i < sliderViewObject.numOfSlides; i++) ...[
             Padding(
               padding: EdgeInsets.all(AppPadding.p8),
               child: _getProperCircle(i, sliderViewObject.currentIndex),
@@ -147,7 +142,7 @@ Widget _getContentWidget(SliderViewObject? sliderViewObject) {
     );
   }
 
-  Widget _getProperCircle(int index , int currentIndex) {
+  Widget _getProperCircle(int index, int currentIndex) {
     if (index == currentIndex) {
       return SvgPicture.asset(ImageAssets.hollowCircleIcon);
     } else {
